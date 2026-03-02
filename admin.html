@@ -1,180 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Dashboard - KK Vehicle Sewa</title>
-    <script>
-        (function () {
-            var defaultTheme = 'dark';
-            try {
-                var saved = localStorage.getItem('kk_theme');
-                if (saved) defaultTheme = saved;
-            } catch (e) { }
-            document.documentElement.setAttribute('data-theme', defaultTheme);
-        })();
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard | KK Vehicle Sewa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <div class="admin-layout">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-logo logo">
-                <span class="logo-icon">🚗</span>
-                <span class="logo-text">KK <b>ADMIN</b></span>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="#" class="sidebar-link active">
-                    <span class="sidebar-icon">📊</span>
-                    <span>Dashboard</span>
-                </a>
-                <a href="#" class="sidebar-link">
-                    <span class="sidebar-icon">🚙</span>
-                    <span>Vehicles</span>
-                </a>
-                <a href="#" class="sidebar-link">
-                    <span class="sidebar-icon">📝</span>
-                    <span>Bookings</span>
-                </a>
-                <a href="#" class="sidebar-link">
-                    <span class="sidebar-icon">👥</span>
-                    <span>Users</span>
-                </a>
-                <a href="#" class="sidebar-link">
-                    <span class="sidebar-icon">🛡️</span>
-                    <span>PUC & Insurance</span>
-                </a>
-                <a href="#" class="sidebar-link">
-                    <span class="sidebar-icon">⚙️</span>
-                    <span>Settings</span>
-                </a>
-                <a href="index.html" class="sidebar-link" style="margin-top: auto;">
-                    <span class="sidebar-icon">⬅️</span>
-                    <span>Back to Site</span>
-                </a>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Admin Header -->
-            <header class="admin-header">
-                <h1 class="admin-title">Dashboard Overview</h1>
-                <div class="admin-user">
-                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">🌙</button>
-                    <div class="admin-avatar">A</div>
-                </div>
-            </header>
-
-            <!-- Admin Body -->
-            <div class="admin-body">
-                <!-- Stats Grid -->
-                <div class="admin-stats-grid">
-                    <div class="stat-card-glass">
-                        <div class="stat-card-title">Total Users</div>
-                        <div class="stat-card-value">12,480</div>
-                        <div class="stat-card-trend trend-up">
-                            <span>↑ 12%</span>
-                            <span style="color:var(--muted)">vs last month</span>
-                        </div>
-                    </div>
-                    <div class="stat-card-glass">
-                        <div class="stat-card-title">Active Rentals</div>
-                        <div class="stat-card-value">84</div>
-                        <div class="stat-card-trend trend-up">
-                            <span>↑ 5%</span>
-                            <span style="color:var(--muted)">vs yesterday</span>
-                        </div>
-                    </div>
-                    <div class="stat-card-glass">
-                        <div class="stat-card-title">Pending PUCs</div>
-                        <div class="stat-card-value">312</div>
-                        <div class="stat-card-trend trend-down">
-                            <span>↓ 2%</span>
-                            <span style="color:var(--muted)">needs attention</span>
-                        </div>
-                    </div>
-                    <div class="stat-card-glass">
-                        <div class="stat-card-title">Revenue</div>
-                        <div class="stat-card-value">₹4.2L</div>
-                        <div class="stat-card-trend trend-up">
-                            <span>↑ 18%</span>
-                            <span style="color:var(--muted)">vs last month</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent Bookings Table -->
-                <section class="admin-section">
-                    <div class="admin-section-header">
-                        <h2 class="admin-section-title">Recent Bookings / Requests</h2>
-                        <button class="btn btn-outline">View All</button>
-                    </div>
-                    <div class="data-table-wrapper">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Customer Name</th>
-                                    <th>Service / Vehicle</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#B1001</td>
-                                    <td>Rahul Sharma</td>
-                                    <td>Honda City Rental</td>
-                                    <td>Oct 24, 2026</td>
-                                    <td><span class="status-badge status-active">Confirmed</span></td>
-                                    <td><button class="btn btn-outline"
-                                            style="padding:6px 12px;font-size:12px;">Manage</button></td>
-                                </tr>
-                                <tr>
-                                    <td>#B1002</td>
-                                    <td>Priya Singh</td>
-                                    <td>PUC Renewal</td>
-                                    <td>Oct 24, 2026</td>
-                                    <td><span class="status-badge status-pending">Pending</span></td>
-                                    <td><button class="btn btn-outline"
-                                            style="padding:6px 12px;font-size:12px;">Manage</button></td>
-                                </tr>
-                                <tr>
-                                    <td>#B1003</td>
-                                    <td>Amit Kumar</td>
-                                    <td>Hyundai Creta</td>
-                                    <td>Oct 23, 2026</td>
-                                    <td><span class="status-badge status-active">Active Trip</span></td>
-                                    <td><button class="btn btn-outline"
-                                            style="padding:6px 12px;font-size:12px;">Manage</button></td>
-                                </tr>
-                                <tr>
-                                    <td>#B1004</td>
-                                    <td>Sneha Patil</td>
-                                    <td>Car Insurance Renew</td>
-                                    <td>Oct 22, 2026</td>
-                                    <td><span class="status-badge status-pending">Processing</span></td>
-                                    <td><button class="btn btn-outline"
-                                            style="padding:6px 12px;font-size:12px;">Manage</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
-        </main>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html"><span class="logo-mark">🚘</span>KK VEHICLE SEWA</a>
+      <div class="header-actions">
+        <span class="badge">Administrator</span>
+        <a class="btn btn-outline" href="index.html">Back to Site</a>
+        <a class="btn btn-dark nav-auth-btn" href="#">Logout</a>
+      </div>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <main class="admin-shell">
+    <aside class="sidebar">
+      <h3>Dashboard</h3>
+      <a href="#" class="nav-link active">Overview</a>
+      <a href="#" class="nav-link">Bookings</a>
+      <a href="#" class="nav-link">Users</a>
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">Settings</a>
+    </aside>
+
+    <section class="admin-main">
+      <h2>Operations Overview</h2>
+      <p class="helper">Real-time snapshot of platform activity and booking requests.</p>
+      <div class="stats-grid">
+        <article class="panel stat-card"><div class="stat-card-title">Registered Users</div><div class="stat-card-value">0</div></article>
+        <article class="panel stat-card"><div class="stat-card-title">Active Trips</div><div class="stat-card-value">0</div></article>
+        <article class="panel stat-card"><div class="stat-card-title">Pending Requests</div><div class="stat-card-value">0</div></article>
+        <article class="panel stat-card"><div class="stat-card-title">Revenue</div><div class="stat-card-value">₹0</div></article>
+      </div>
+
+      <section class="panel admin-section" style="padding:14px;">
+        <div class="section-title-row"><h3>Recent Bookings / Requests</h3></div>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr><th>ID</th><th>Customer Name</th><th>Service / Vehicle</th><th>Date</th><th>Status</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="6">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
-
 </html>

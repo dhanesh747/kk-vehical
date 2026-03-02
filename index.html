@@ -1,364 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KK Vehicle Sewa</title>
+  <title>KK Vehicle Sewa | Complete Vehicle Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-<script>
-  (function() {
-    var d = "dark";
-    try {
-      var s = localStorage.getItem("kk_theme");
-      if (s) d = s;
-    } catch(e) {}
-    document.documentElement.setAttribute("data-theme", d);
-  })();
-</script>
 </head>
-
 <body>
   <header class="site-header">
-    <div class="logo">
-      <span class="logo-icon">🚗</span>
-      <span class="logo-text">KK VEHICLE <b>SEWA</b></span>
-    </div>
-    <div class="header-actions">
-      <div class="chip chip-success">
-        <span class="pulse"></span>
-        <span>Service Active</span>
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo"><span class="logo-mark">🚘</span>KK VEHICLE SEWA</a>
+      <div class="header-actions">
+        <span class="badge">Trusted by 10,000+ customers</span>
+        <a class="btn btn-outline" href="tel:+919999999999">24/7 Support</a>
+        <a class="btn btn-outline" href="rental-vehicles.html">Rentals</a>
+        <a class="btn btn-dark nav-auth-btn" href="login.html">Login</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
       </div>
-      <a class="chip chip-dark" href="tel:+919999999999">24/7 Support</a>
-      <a class="btn btn-accent" href="rental-vehicles.html">Vehicle Rentals</a>
-      <a class="btn btn-dark nav-auth-btn" href="login.html">Login</a>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">🌙</button>
     </div>
   </header>
 
-  <main>
+  <main class="container">
     <section class="hero">
-      <div class="hero-left">
-        <div class="trust-badge">Trusted by 10,000+ customers</div>
-        <h1>Your Partner in <span class="accent">Vehicle Compliance</span></h1>
-        <p>The most reliable platform for PUC, Insurance, and RTO services. Track your expiry status and find centers
-          near you.</p>
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-icon">👥</div>
-            <div class="stat-value">500+</div>
-            <div class="stat-label">Active Centers</div>
-          </div>
-          <div class="stat">
-            <div class="stat-icon">✅</div>
-            <div class="stat-value">100%</div>
-            <div class="stat-label">Certified</div>
+      <div class="hero-grid">
+        <div class="panel hero-panel">
+          <p class="eyebrow">Professional automotive platform</p>
+          <h1>One place for <span style="color:var(--primary)">compliance, insurance, rentals & support</span></h1>
+          <p class="lead">Manage PUC, insurance renewal, RTO services, and premium vehicle rentals with transparent pricing and verified partners across Nagpur and Pune.</p>
+          <div class="metric-grid">
+            <div class="metric"><strong>500+</strong>Active service centers</div>
+            <div class="metric"><strong>98%</strong>On-time completion</div>
+            <div class="metric"><strong>4.8/5</strong>Average customer rating</div>
           </div>
         </div>
-      </div>
-      <div class="hero-right card">
-        <div class="card-header">
-          <div class="card-title-icon">🔍</div>
-          <div class="card-title">Track <span class="accent">Status</span></div>
-        </div>
-        <form id="statusForm" class="form">
-          <label class="form-label">Vehicle Number</label>
-          <input type="text" id="vehicleNumber" class="input" placeholder="e.g. MH12AB1234" maxlength="12" />
-          <label class="form-label">Registered Mobile</label>
-          <input type="tel" id="mobileNumber" class="input" placeholder="Enter 10 digit mobile" maxlength="10" />
-          <button type="submit" class="btn btn-primary">Check Status Now</button>
-        </form>
-      </div>
-      <div class="hero-bg"></div>
-    </section>
-
-    <section class="services">
-      <div class="section-header">
-        <h2>Our Professional <span class="accent">Services</span></h2>
-        <a class="link-action" href="#">View All</a>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">🛡️</div>
-          <div class="service-title">PUC Testing</div>
-          <div class="service-desc">Certified pollution check</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🚙</div>
-          <div class="service-title">Vehicle Insurance</div>
-          <div class="service-desc">Comprehensive & Third-party</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🏥</div>
-          <div class="service-title">Health Insurance</div>
-          <div class="service-desc">Family health protection</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🪪</div>
-          <div class="service-title">Term Insurance</div>
-          <div class="service-desc">Life cover for family</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <div class="service-title">Fastag</div>
-          <div class="service-desc">New issuance & recharge</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔖</div>
-          <div class="service-title">HSRP Plates</div>
-          <div class="service-desc">High-security plates</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🛠️</div>
-          <div class="service-title">Car Servicing</div>
-          <div class="service-desc">Maintenance & repair</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🏢</div>
-          <div class="service-title">RTO Work</div>
-          <div class="service-desc">License & RC Services</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🏠</div>
-          <div class="service-title">Real Estate</div>
-          <div class="service-desc">Buy, Sell or Rent</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">ℹ️</div>
-          <div class="service-title">PUC Setup</div>
-          <div class="service-desc">Center establishment support</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📟</div>
-          <div class="service-title">PUC Machines</div>
-          <div class="service-desc">Certified testing equipment</div>
-          <button class="btn btn-outline">Enquire</button>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📄</div>
-          <div class="service-title">Digital RC</div>
-          <div class="service-desc">Get digital RC copies</div>
-          <button class="btn btn-outline">Enquire</button>
+        <div class="panel form-card">
+          <h3>Track Vehicle Status</h3>
+          <form id="statusForm" class="form">
+            <label class="form-label" for="vehicleNumber">Vehicle Number</label>
+            <input id="vehicleNumber" class="input" placeholder="MH12AB1234" maxlength="12" required>
+            <label class="form-label" for="mobileNumber">Registered Mobile</label>
+            <input id="mobileNumber" class="input" placeholder="10 digit mobile" maxlength="10" required>
+            <button type="submit" class="btn btn-primary">Check Status</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <section class="vehicle-gallery">
-      <div class="vehicle-card">
-        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=1200&auto=format&fit=crop"
-          alt="Premium car driving on highway" />
-        <div class="vehicle-label">
-          <span class="vehicle-tag">Cars</span>
-          <h3>City & Premium Cars</h3>
-          <p>Compliance checks for hatchbacks, sedans and SUVs.</p>
-        </div>
-      </div>
-      <div class="vehicle-card">
-        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=1200&auto=format&fit=crop"
-          alt="Two motorbikes parked" />
-        <div class="vehicle-label">
-          <span class="vehicle-tag">Bikes</span>
-          <h3>Two‑Wheelers</h3>
-          <p>All major motorcycle and scooter brands supported.</p>
-        </div>
-      </div>
-      <div class="vehicle-card">
-        <img src="https://images.unsplash.com/photo-1501703979959-797917eb21c8?q=80&w=1200&auto=format&fit=crop"
-          alt="Cargo truck on highway" />
-        <div class="vehicle-label">
-          <span class="vehicle-tag">Trucks</span>
-          <h3>Commercial Vehicles</h3>
-          <p>PUC and insurance services for heavy vehicles.</p>
-        </div>
+    <section class="section">
+      <div class="section-title-row"><h2>Core Services</h2><a href="rental-vehicles.html" class="btn btn-outline">Explore Rentals</a></div>
+      <div class="card-grid services-grid">
+        <article class="panel service-card"><h3>PUC Testing</h3><p>Certified emission checks with instant digital certificate.</p><button class="btn btn-outline">Enquire</button></article>
+        <article class="panel service-card"><h3>Vehicle Insurance</h3><p>Comprehensive and third-party policy support and renewals.</p><button class="btn btn-outline">Enquire</button></article>
+        <article class="panel service-card"><h3>RTO Assistance</h3><p>Ownership transfer, duplicate RC, NOC and challan support.</p><button class="btn btn-outline">Enquire</button></article>
+        <article class="panel service-card"><h3>Fastag & HSRP</h3><p>Issuance, updates and renewals through authorized channels.</p><button class="btn btn-outline">Enquire</button></article>
       </div>
     </section>
 
-    <section class="centers">
-      <div class="centers-header">
-        <div>
-          <h2>Find Verified <span class="accent">PUC Centers</span></h2>
-          <div class="subtitle">Locate testing centers in your vicinity</div>
-        </div>
-        <div class="filter">
-          <label>Filter Region:</label>
-          <select id="regionFilter" class="input">
-            <option value="all">All</option>
-            <option value="nagpur">Nagpur</option>
-            <option value="pune">Pune</option>
-          </select>
-        </div>
+    <section class="section">
+      <div class="section-title-row"><h2>Service Centers</h2></div>
+      <div class="center-controls">
+        <select id="regionFilter">
+          <option value="all">All Regions</option>
+          <option value="nagpur">Nagpur</option>
+          <option value="pune">Pune</option>
+        </select>
       </div>
-      <div class="centers-row">
-        <div class="center-card" data-region="nagpur">
-          <div class="center-city">Nagpur</div>
-          <div class="center-title">KK PUC Center - North</div>
-          <div class="center-sub">123 Main St, Sadar</div>
-          <div class="center-badges">
-            <span class="badge badge-success">Verified Station</span>
-          </div>
-          <div class="center-actions">
-            <a class="btn btn-dark" href="tel:+910000000001">Call Now</a>
-            <a class="btn btn-whatsapp" href="#">WhatsApp</a>
-          </div>
-        </div>
-        <div class="center-card" data-region="nagpur">
-          <div class="center-city">Nagpur</div>
-          <div class="center-title">Shree Sai PUC</div>
-          <div class="center-sub">45 Ring Road, Trimurti Nagar</div>
-          <div class="center-badges">
-            <span class="badge badge-success">Verified Station</span>
-          </div>
-          <div class="center-actions">
-            <a class="btn btn-dark" href="tel:+910000000002">Call Now</a>
-            <a class="btn btn-whatsapp" href="#">WhatsApp</a>
-          </div>
-        </div>
-        <div class="center-card" data-region="pune">
-          <div class="center-city">Pune</div>
-          <div class="center-title">Global Testing Hub</div>
-          <div class="center-sub">Opp Railway Station</div>
-          <div class="center-badges">
-            <span class="badge badge-success">Verified Station</span>
-          </div>
-          <div class="center-actions">
-            <a class="btn btn-dark" href="tel:+910000000003">Call Now</a>
-            <a class="btn btn-whatsapp" href="#">WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="cta-left">
-        <div class="cta-title">PUC Machine & <span class="accent">Center Setup</span></div>
-        <div class="cta-desc">Establish your own certified testing center with our industry-leading machines and
-          complete compliance guidance.</div>
-        <a class="btn btn-primary" href="#">Consultation Request</a>
-      </div>
-      <div class="cta-right">
-        <div class="cta-title">HSRP Plates & <span class="accent">Smart Cards</span></div>
-        <div class="cta-desc">Upgrade to high-security number plates or apply for digital smart card copies of your
-          registration certificates.</div>
-        <a class="btn btn-dark" href="#">Get Service</a>
+      <div class="card-grid centers-grid">
+        <article class="panel center-card" data-region="nagpur"><h3>Nagpur Central Hub</h3><p class="helper">Sitabuldi, Nagpur • Open 8 AM - 8 PM</p></article>
+        <article class="panel center-card" data-region="nagpur"><h3>Dharampeth Service Point</h3><p class="helper">Dharampeth, Nagpur • Open 9 AM - 7 PM</p></article>
+        <article class="panel center-card" data-region="pune"><h3>Pune Main Center</h3><p class="helper">Shivajinagar, Pune • Open 8 AM - 9 PM</p></article>
+        <article class="panel center-card" data-region="pune"><h3>Kharadi Express Desk</h3><p class="helper">Kharadi, Pune • Open 10 AM - 8 PM</p></article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-left">
-      <div class="logo">
-        <span class="logo-icon">🚗</span>
-        <span class="logo-text">KK VEHICLE <b>SEWA</b></span>
-      </div>
-      <div class="footer-desc">Connecting vehicle owners with reliable compliance services across the region. Powered by
-        KK Enterprise.</div>
-    </div>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Help Center</a>
-      <a href="#">Safety</a>
-    </div>
-    <div class="footer-right">
-      <div class="copyright">© 2026 KK Enterprise</div>
-      <div class="system-status"><span class="dot"></span>All Systems Operational</div>
-    </div>
-  </footer>
-
-  <div id="recordModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-top">
-        <div class="plate">MH06BU6815</div>
-        <div class="status-badge">Active</div>
-        <button class="modal-close" aria-label="Close">✕</button>
-      </div>
-      <div class="record-grid">
-        <div class="record-block">
-          <div class="record-title">Owner Name</div>
-          <div class="record-value">Rajesh Kumar Sharma</div>
-        </div>
-        <div class="record-block">
-          <div class="record-title">Model</div>
-          <div class="record-value">Maruti Suzuki Swift VXI</div>
-        </div>
-        <div class="record-block">
-          <div class="record-title">Fuel Type</div>
-          <div class="record-value">Petrol/CNG</div>
-        </div>
-        <div class="record-block">
-          <div class="record-title">Reg. Date</div>
-          <div class="record-value">15 Mar 2022</div>
-        </div>
-        <div class="record-block">
-          <div class="record-title">Class</div>
-          <div class="record-value">Motor Car (LMV)</div>
-        </div>
-        <div class="record-block">
-          <div class="record-title">To</div>
-          <div class="record-value">14 Mar 2037</div>
-        </div>
-      </div>
-      <div class="record-actions">
-        <div class="record-card green">
-          <div class="card-title">Insurance</div>
-          <div class="card-sub">HDFC ERGO General Insurance</div>
-          <div class="card-sub">POL: 9988776655</div>
-          <div class="card-badge">Active</div>
-          <div class="card-footer">Expiry: 14 Mar 2026</div>
-        </div>
-        <div class="record-card amber">
-          <div class="card-title">PUC Status</div>
-          <div class="card-sub">KK Sewa PUC Center</div>
-          <div class="card-sub">PUC-2024-8899</div>
-          <div class="card-badge">Active</div>
-          <div class="card-footer">Expiry: 20 Jul 2026</div>
-        </div>
-        <div class="record-card light">
-          <div class="card-title">Registering Authority</div>
-          <div class="card-sub">MH-12 Pune RTO</div>
-          <div class="card-sub">Chassis No XXXXX12345</div>
-          <div class="card-sub">Engine No XXXXX67890</div>
-          <div class="card-note">Vehicle fitness or compliance data is fetched in real-time.</div>
-          <a class="btn btn-dark full" href="#">Report Discrepancy</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-  <!-- Mobile Bottom Navigation -->
   <nav class="bottom-nav">
-    <a href="index.html" class="nav-item active">
-      <span class="nav-icon">🏠</span>
-      <span>Home</span>
-    </a>
-    <a href="rental-vehicles.html" class="nav-item">
-      <span class="nav-icon">🚗</span>
-      <span>Rentals</span>
-    </a>
-    <a href="login.html" class="nav-item nav-auth-mobile">
-      <span class="nav-icon">👤</span>
-      <span>Profile</span>
-    </a>
-    <a href="tel:+919999999999" class="nav-item">
-      <span class="nav-icon">📞</span>
-      <span>Support</span>
-    </a>
+    <a href="index.html" class="nav-item active"><span class="nav-icon">🏠</span><span>Home</span></a>
+    <a href="rental-vehicles.html" class="nav-item"><span class="nav-icon">🚗</span><span>Rentals</span></a>
+    <a href="login.html" class="nav-item nav-auth-mobile"><span class="nav-icon">👤</span><span>Profile</span></a>
+    <a href="tel:+919999999999" class="nav-item"><span class="nav-icon">📞</span><span>Support</span></a>
   </nav>
+  <script src="script.js"></script>
 </body>
-
 </html>
