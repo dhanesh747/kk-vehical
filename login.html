@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - KK Vehicle Sewa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .login-wrapper {
+      width: 100%;
+      max-width: 440px;
+      padding: 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .login-card {
+      background: var(--surface-glass);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      position: relative;
+    }
+
+    .login-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .login-title {
+      font-weight: 800;
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .login-subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .login-form {
+      display: grid;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .login-footer {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .login-footer a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      transition: text-shadow 0.3s ease;
+    }
+
+    .login-footer a:hover {
+      text-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .login-error {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      padding: 10px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    .full {
+      width: 100%;
+    }
+  </style>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>Home</span>
+    </a>
+    <a href="rental-vehicles.html" class="nav-item">
+      <span class="nav-icon">🚗</span>
+      <span>Rentals</span>
+    </a>
+    <a href="login.html" class="nav-item nav-auth-mobile">
+      <span class="nav-icon">👤</span>
+      <span>Profile</span>
+    </a>
+    <a href="tel:+919999999999" class="nav-item">
+      <span class="nav-icon">📞</span>
+      <span>Support</span>
+    </a>
+  </nav>
+  <script src="script.js"></script>
+</body>
+
+</html>
